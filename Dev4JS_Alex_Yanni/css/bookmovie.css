@@ -1,0 +1,15 @@
+.hoverIcon:hover {
+    transform: scale(1.1);
+}
+
+.hoverIcon {
+ transition: all .2s ease-in-out;
+}
+
+.clickable:hover{
+    cursor: pointer;
+}
+
+#appendContainer{
+    visibility:hidden
+}

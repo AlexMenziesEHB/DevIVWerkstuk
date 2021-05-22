@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Dev 4</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <link href="css/bookmovie.css" rel="stylesheet">
+
+  <script src="./js/calculator.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">Dev 4</a>
+    </div>
+  </nav>
+
+  <section class="testimonials text-center bg-light" style="padding-top: 185px;">
+    <div class="container">
+      <h2 class="mb-5">Calculator:</h2>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="number1" placeholder="number">
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <select class="custom-select" id="selectOperator">
+            <option selected value="null">Choose...</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+        </div>
+        <div class="col-lg-3">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="number2" placeholder="number">
+          </div>
+        </div>
+        <div class="col-lg-1">=</div>
+        <div class="col-lg-2">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="number3" disabled placeholder="result">
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="testimonials text-center bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="appendText">
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="calculate()">Calculate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- result table -->
+  <section class="testimonials text-center bg-light">
+    <div class="container">
+      <div class="row" id="calcHistoryRow" style="visibility: hidden;">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">operant 1</th>
+                <th scope="col">operator</th>
+                <th scope="col">operant 2</th>
+                <th scope="col">result</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-lg-12 text-left" style="padding-top: 35px;">
+          <label for="basic-url">Search for calculation</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" val="operant1">operant 1</a>
+                <a class="dropdown-item" val="operator">operator</a>
+                <a class="dropdown-item" val="operant2">operant 2</a>
+                <a class="dropdown-item" val="result">result</a>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="searchFieldHistory" aria-label="Enter your search query here">
+            <div class="invalid-feedback">
+              Please provide a value to search before pressing the search dropdown.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 text-left">
+          <button type="button" class="btn btn-success" style="display: none;" id="successResult"></button>
+          <button type="button" class="btn btn-danger" style="display: none;" id="failResult">No results found!</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- result table -->
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Yanni & Alex 2021.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
